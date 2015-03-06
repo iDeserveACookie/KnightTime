@@ -407,7 +407,6 @@ void unbold(){
   b_nine(false);
 }
 void a_bold(){
-  time_minutes = 35;
       if(time_hours ==8&&pm==false){
         if(time_minutes <=45){
           unbold();
@@ -485,62 +484,122 @@ void a_bold(){
       }
 }
 void tuesday_bold(){
-  if(time_hours ==8){
-        
+	unbold();
+  if(time_hours ==8&&pm==false){
+        b_one(true);
       }
-      if(time_hours ==9){
-        
+      if(time_hours ==9&&pm==false){
+        if(time_minutes <= 15){
+			b_one(true);
+		}else{
+			b_two(true);
+		}
       }
-      if(time_hours ==10){
-        
+      if(time_hours ==10&&pm==false){
+        if(time_minutes <= 25){
+			b_two(true);
+		}else{
+			b_three(true);
+		}
       }
-      if(time_hours ==11){
-        
+      if(time_hours ==11&&pm==false){
+        if(time_minutes<=45){
+			b_three(true);
+		}else{
+			b_four(true);
+		}
       }
-      if(time_hours ==12){
-        
+      if(time_hours ==12&&pm==true){
+        if(time_minutes<=35){
+			b_four(true);
+		}else{
+			b_five(true);
+		}
       }
-      if(time_hours ==1){
-        
+      if(time_hours ==1&&pm==true){
+        if(time_minutes<=25){
+			b_five(true);
+		}else{
+			b_six(true);
+		}
       }
-      if(time_hours ==2){
-        
+      if(time_hours ==2&&pm==true){
+        if(time_minutes<=45){
+			b_six(true);
+		}
       }
-      if(time_hours ==3){
+      if(time_hours ==3&&pm==true){
         
       }
 }
 void wedsday_bold(){
-  if(time_hours ==8){
-        
+  if(time_hours ==8&&pm==false){
+		unbold();
+        b_one(true);
       }
-      if(time_hours ==9){
-        
+      if(time_hours==9&&pm==false){
+        if(time_minutes <= 15){
+			unbold();
+			b_one(true);
+		}else{
+			unbold();
+			//Debug
+			//char buf[64];
+			//snprintf(buf, 64, "%d", time_minutes);
+			//c_three(buf, true);
+			b_two(true);
+		}
       }
-      if(time_hours ==10){
-        
+      if(time_hours ==10&&pm==false){
+        if(time_minutes<=25){
+			unbold();
+			b_two(true);
+		}else{
+			unbold();
+			b_three(true);
+		}
       }
-      if(time_hours ==11){
-        
+      if(time_hours ==11&&pm==false){
+        if(time_minutes<=45){
+			unbold();
+			b_three(true);
+		}else{
+			unbold();
+			b_four(true);
+		}
       }
-      if(time_hours ==12){
-        
+      if(time_hours ==12&&pm==true){
+        if(time_minutes<=35){
+			unbold();
+			b_four(true);
+		}else{
+			unbold();
+			b_five(true);
+		}
       }
-      if(time_hours ==1){
-        
+      if(time_hours ==1&&pm==true){
+		  unbold();
+        if(time_minutes<=25){
+			b_five(true);
+		}else{
+			b_six(true);
+		}
       }
-      if(time_hours ==2){
-        
+      if(time_hours ==2&&pm==true){
+		  unbold();
+		  if(time_minutes<=45){
+			  b_six(true);
+		  }
       }
-      if(time_hours ==3){
-        
+      if(time_hours ==3&&pm==true){
+        unbold();
       }
 }
 void window_pos(){
   switch(window_positon){
     case 1: init_a("Monday");a_bold();break;
-    case 2: init_tue();break;
-    case 3: init_wed();break;
+    case 2: init_tue();tuesday_bold();break;
+    case 3: init_wed();wedsday_bold();break;
     case 4: init_a("Thursday");a_bold();break;
     case 5: init_a("Friday!");a_bold();break;
   }
