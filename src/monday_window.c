@@ -328,7 +328,7 @@ void init_tue(){
   c_nine("",false);
 }
 void init_wed(){
-  c_title("Wensday");
+  c_title("Wednesday");
   c_one("P 7 8-9:15",false);
   c_two("Chapel 9:20-10:25",false);
   c_three("P 4 10:30-11:45 ",false);
